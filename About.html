@@ -3,19 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Maverick</title>
-        <link href="css/index.css" rel="stylesheet">
+        <link href="css/about.css" rel="stylesheet">
         <link href="css/navbar.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+        
     </head>
 
     <body>
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid mx-5">
-                <a class="navbar-brand" href="#">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1" href="#">
                     Maverick
                 </a>
                 
@@ -24,27 +28,106 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item mx-3">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-4">
+                            <a class="nav-link active" id="Home" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="About.html">About Us</a>
+                        <li class="nav-item mx-4">
+                            <a class="nav-link" id="About" href="About.html">About Us</a>
                         </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="service.html">Service</a>
+                        <li class="nav-item mx-4">
+                            <a class="nav-link" id="Service" href="service.html">Service</a>
                         </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                        <li class="nav-item mx-4">
+                            <a class="nav-link" id="Contact" href="contact.html">Contact</a>
                         </li>
                     </ul>
+
+                    <div class="dropdown">
+                        <button class="dropbtn" id="dropdownButton">
+                            <img src="image/us.svg" alt="thailand" width="20" height="10">
+                            English
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a onclick="changeLanguage('th')">
+                                <img src="image/th.svg" alt="thailand" width="20" height="10">
+                                ไทย
+                            </a>
+                        
+                            <a onclick="changeLanguage('eng')" class="option">
+                                <img src="image/us.svg" alt="thailand" width="20" height="10">
+                                English
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
-        <!--End Navbar-->
+        <!--End Navbar-->        
 
-        <!--Start code here-->
-        <h1>about</h1> <!--can delete this line-->
 
     </body>
+
+     <script>
+        // Navbar
+        // Create a function to change
+        // the hash value of the page
+        function changeLanguage(lang) {
+          location.hash = lang;
+          location.reload();
+       }
+
+        // Create a function to change the language
+        var language = {
+                th: {
+                    Home: "หน้าหลัก",
+                    About: "ราคา",
+                    Service: "ผลงานและการออกแบบ",
+                    Contact: "ติดต่อ",
+                },
+                eng: {
+                    Home: "Home",
+                    About: "About Us",
+                    Service: "Service",
+                    Contact: "Contact",
+                }
+            };
+            
+            function changeLanguage(lang) {
+                // Set the content of the webpage based on the selected language
+                document.getElementById("Home").textContent = language[lang].Home;
+                document.getElementById("About").textContent = language[lang].About;
+                document.getElementById("Service").textContent = language[lang].Service;
+                document.getElementById("Contact").textContent = language[lang].Contact;
+
+                // Update the URL with the selected language
+                var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + "#" + lang;
+                history.pushState(null, null, newURL);
+
+                // Get the dropdown button element
+                var dropdownButton = document.etElementById("dropdownButton");
+                
+                if (lang  === 'th') {
+                // Change the dropdown button text to 'ไทย'
+                dropdownButton.innerHTML = '<img src="image/th.svg" alt="thailand" width="20" height="10"> ไทย';
+                } else if (lang  === 'eng') {
+                // Change the dropdown button text to 'English'
+                dropdownButton.innerHTML = '<img src="image/us.svg" alt="thailand" width="20" height="10"> English';
+                }
+            }
+
+            // Check if a hash value exists in the URL
+            if (window.location.hash) {
+                // Set the content of the webpage based on the hash value
+                if (window.location.hash == "#eng") {
+                    changeLanguage("eng");
+                } else if (window.location.hash == "#th") {
+                    changeLanguage("th");
+                }
+        }
+        // End Navbar
+    </script>
+
+
 </html>
