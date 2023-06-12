@@ -16,55 +16,59 @@
     </head>
 
     <body>
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand fs-1" href="#">
-                    Maverick
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <!-- Header -->
+        <header class="header sticky-top" id="myHeader">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-1" href="#">
+                        <h1>Maverick</h1>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-4">
-                            <a class="nav-link active" id="Home" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" id="About" href="About.html">About Us</a>
-                        </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" id="Service" href="service.html">Service</a>
-                        </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" id="Contact" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item mx-4">
+                                <a class="nav-link active" style="color: rgb(0, 0, 0);" id="Home_lang" aria-current="page" href="index.html">หน้าหลัก</a>
+                            </li>
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" style="color: rgb(0, 0, 0);" id="Service_lang" href="service.html">บริการและราคา</a>
+                            </li>
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" style="color: rgb(0, 0, 0);" id="About_lang" href="About.html">เกี่ยวกับเรา</a>
+                            </li>
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" style="color: rgb(0, 0, 0);" id="Contact_lang" href="contact.html">ติดต่อ</a>
+                            </li>
+                        </ul>
 
-                    <div class="dropdown">
-                        <button class="dropbtn" id="dropdownButton">
-                            <img src="image/us.svg" alt="thailand" width="20" height="10">
-                            English
-                        </button>
-
-                        <div class="dropdown-content">
-                            <a onclick="changeLanguage('th')">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="dropdownButton">
                                 <img src="image/th.svg" alt="thailand" width="20" height="10">
                                 ไทย
-                            </a>
-                        
-                            <a onclick="changeLanguage('eng')" class="option">
-                                <img src="image/us.svg" alt="thailand" width="20" height="10">
-                                English
-                            </a>
+                            </button>
+
+                            <div class="dropdown-content">
+                                <a onclick="changeLanguage('th')">
+                                    <img src="image/th.svg" alt="thailand" width="20" height="10">
+                                    ไทย
+                                </a>
+                            
+                                <a onclick="changeLanguage('eng')" class="option">
+                                    <img src="image/us.svg" alt="thailand" width="20" height="10">
+                                    English
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-        <!--End Navbar-->        
+            </nav>
+        <!--End-Navbar-->   
+        </header>
+        <!--End-Header-->       
 
 
     </body>
