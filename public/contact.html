@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--Version 0.1.1-->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -120,7 +120,7 @@
 
     </body>
 
-     <script>
+    <script>
         // Navbar
         // Create a function to change
         // the hash value of the page
@@ -132,32 +132,44 @@
         // Create a function to change the language
         var language = {
                 th: {
-                    Home: "หน้าหลัก",
-                    About: "ราคา",
-                    Service: "ผลงานและการออกแบบ",
-                    Contact: "ติดต่อ",
+                    Home_lang: "หน้าหลัก",
+                    Service_lang: "บริการและราคา",
+                    About_lang: "เกี่ยวกับเรา",
+                    Contact_lang: "ติดต่อ",
+
+                    Welcome_lang: "ยินดีต้อนรับสู่ทีม Maverick",
+                    Welcome_Dic_lang: "เราคือทีมผู้ออกแบบที่มีความสามารถพิเศษที่สุดในการทำเว็บไซต์ด้วย Bootstrap",
+
+                    Service1_lang: "บริการของเรา",
+
+
                 },
                 eng: {
-                    Home: "Home",
-                    About: "About Us",
-                    Service: "Service",
-                    Contact: "Contact",
+                    Home_lang: "Home",
+                    Service_lang: "Service",
+                    About_lang: "About Us",
+                    Contact_lang: "Contact",
+
+                    Welcome_lang: "Welcome to Maverrick team",
+                    Welcome_Dic_lang: "We are team of talented designers making websites with Bootstrap",
+
+                    Service1_lang: "Our Service",
                 }
             };
             
             function changeLanguage(lang) {
                 // Set the content of the webpage based on the selected language
-                document.getElementById("Home").textContent = language[lang].Home;
-                document.getElementById("About").textContent = language[lang].About;
-                document.getElementById("Service").textContent = language[lang].Service;
-                document.getElementById("Contact").textContent = language[lang].Contact;
+                document.getElementById("Home_lang").textContent = language[lang].Home_lang;
+                document.getElementById("Service_lang").textContent = language[lang].Service_lang;
+                document.getElementById("About_lang").textContent = language[lang].About_lang;
+                document.getElementById("Contact_lang").textContent = language[lang].Contact_lang;
 
                 // Update the URL with the selected language
                 var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + "#" + lang;
                 history.pushState(null, null, newURL);
 
                 // Get the dropdown button element
-                var dropdownButton = document.etElementById("dropdownButton");
+                var dropdownButton = document.getElementById("dropdownButton");
                 
                 if (lang  === 'th') {
                 // Change the dropdown button text to 'ไทย'
