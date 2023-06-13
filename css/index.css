@@ -11,11 +11,11 @@
 
 /*Fix when open navbar-toggler background not cover all link js*/
 .header.open {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #006c6c 0%, #ffffc9 100%);
 }
 
 .header.scrolling{
-  background-color: #ffffff;
+  background: linear-gradient(to right, #006c6c 0%, #ffffc9 100%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
